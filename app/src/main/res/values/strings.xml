@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">AirlineReservation</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_menu">MenuActivity</string>
+    <string name="title_activity_search_branch">SearchBranchActivity</string>
+    <string name="title_activity_search_flight_plan">SearchFlightPlanActivity</string>
+    <string name="title_activity_relogin">ReloginActivity</string>
+</resources>
