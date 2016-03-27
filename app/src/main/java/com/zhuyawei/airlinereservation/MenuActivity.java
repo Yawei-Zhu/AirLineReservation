@@ -8,6 +8,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Window;
+import android.widget.Button;
+import android.widget.ImageButton;
 
 public class MenuActivity extends AppCompatActivity {
 
@@ -26,19 +28,37 @@ public class MenuActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+        ImageButton ibtnSearchBranch = (ImageButton)findViewById(R.id.ibtn_search_branch);
+        ImageButton ibtnSearchFlightPlan = (ImageButton)findViewById(R.id.ibtn_search_flight_plan);
+        ibtnSearchBranch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MenuActivity.this,SearchBranchActivity.class);
+                startActivity(i);
+            }
+        });
+        ibtnSearchFlightPlan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MenuActivity.this, SearchFlightPlanActivity.class);
+                startActivity(i);
+            }
+        });
+
     }
 
-    public void doClick(View view){
-        Intent i = null;
-        switch (view.getId()){
-            case R.id.ibtn_search_branch:
-                i = new Intent(MenuActivity.this,SearchBranchActivity.class);
-                break;
-            case R.id.ibtn_search_flight_plan:
-                i = new Intent(MenuActivity.this,SearchFlightPlanActivity.class);
-                break;
-        }
-        startActivity(i);
-    }
+//    public void doClick(View view){
+//        Intent i = null;
+//        switch (view.getId()){
+//            case R.id.ibtn_search_branch:
+//                i = new Intent(MenuActivity.this,SearchBranchActivity.class);
+//                break;
+//            case R.id.ibtn_search_flight_plan:
+//                i = new Intent(MenuActivity.this,SearchFlightPlanActivity.class);
+//                break;
+//        }
+//        startActivity(i);
+//    }
 
 }

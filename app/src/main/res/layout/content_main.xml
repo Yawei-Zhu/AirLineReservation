@@ -49,6 +49,5 @@
         android:layout_marginTop="40dp"
         android:layout_centerHorizontal="true"
         android:src="@drawable/bt_login"
-        android:background="@android:color/black"
-        android:onClick="doClick"/>
+        android:background="@android:color/black"/>
 </RelativeLayout>

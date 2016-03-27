@@ -11,6 +11,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.Window;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
@@ -30,24 +31,51 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+        ImageButton ibtnLogin = (ImageButton)findViewById(R.id.ibtn_login);
+        ibtnLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                EditText etName = (EditText)findViewById(R.id.et_name);
+                EditText etPassword = (EditText)findViewById(R.id.et_password);
+                String name = etName.getText().toString();
+                String password = etPassword.getText().toString();
+
+                if("Hao".equals(name) && "111".equals(password)){
+                    Intent i = new Intent(MainActivity.this, MenuActivity.class);
+                    startActivity(i);
+                    finish();
+                }
+                else{
+                    etName.setText("");
+                    etPassword.setText("");
+                    Toast.makeText(MainActivity.this,
+                            "您输入的账号或密码有误，请重新输入！",
+                            Toast.LENGTH_SHORT).show();
+                }
+
+            }
+        });
+
     }
 
-    public void doClick(View view){
-        EditText etName = (EditText)findViewById(R.id.et_name);
-        EditText etPassword = (EditText)findViewById(R.id.et_password);
-        String name = etName.getText().toString();
-        String password = etPassword.getText().toString();
-        Intent i = null;
-        if("Hao".equals(name) && "111".equals(password)){
-            i = new Intent(MainActivity.this, MenuActivity.class);
-            startActivity(i);
-        }
-        else{
-            etName.setText("");
-            etPassword.setText("");
-            Toast.makeText(MainActivity.this, "您输入的账号或密码有误，请重新输入！", Toast.LENGTH_SHORT).show();
-        }
-    }
+//    public void doClick(View view){
+//        EditText etName = (EditText)findViewById(R.id.et_name);
+//        EditText etPassword = (EditText)findViewById(R.id.et_password);
+//        String name = etName.getText().toString();
+//        String password = etPassword.getText().toString();
+//        Intent i = null;
+//        if("Hao".equals(name) && "111".equals(password)){
+//            i = new Intent(MainActivity.this, MenuActivity.class);
+//            startActivity(i);
+//        }
+//        else{
+//            etName.setText("");
+//            etPassword.setText("");
+//            Toast.makeText(MainActivity.this, "您输入的账号或密码有误，请重新输入！", Toast.LENGTH_SHORT).show();
+//        }
+//    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
